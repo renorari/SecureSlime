@@ -5,7 +5,7 @@ Discord.js v12のDiscord Bot(ひでまるサーバーのみ使用可能)
 main.js  
 command.js  
 package.json  
-package-lock.json 
+package-lock.json  
 config.json  
 ~~botToken.txt~~  
 
