@@ -22,7 +22,7 @@ client.on('message', async message => {
         message.member.roles.add(`${roleId}`);
         message.reply({
             embed: {
-                description: `<@${roleId}>を付与しました👍`,
+                description: `<@&${roleId}>を付与しました👍`,
                 color: "RANDOM"
             }
         });
