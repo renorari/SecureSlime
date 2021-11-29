@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const { readFileSync } = require("fs");
-const config = require("config.json");
+const config = require("./config.json");
 
 const client = new Discord.Client();
 const TOKEN = readFileSync('./botToken.txt', 'utf8');
