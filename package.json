@@ -1,0 +1,23 @@
+{
+  "name": "secureslime",
+  "version": "1.0.0",
+  "description": "Discord.js v12のDiscord Bot(ひでまるサーバーのみ使用可能)\r ## ディレクトリ構造\r ./  \r main.js  \r command.js  \r package.json  \r package-lock.json  \r config.json  \r ~~botToken.txt~~",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HidemaruOwO/SecureSlime.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HidemaruOwO/SecureSlime/issues"
+  },
+  "homepage": "https://github.com/HidemaruOwO/SecureSlime#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
+}

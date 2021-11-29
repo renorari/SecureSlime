@@ -1,5 +1,5 @@
 # SecureSlime
-Discord.js v12のDiscord Bot(ひでまるサーバーのみ使用可能)
+Discord.js v12のDiscord Bot([ひでまる界隈](https://discord.gg/dWwNQZGNTu)のみ使用可能)
 ## ディレクトリ構造
 ./  
 main.js  
