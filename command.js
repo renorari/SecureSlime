@@ -17,7 +17,7 @@ client.on('message', async message => {
     if (cmd == 'hello') {
         var roleId = "914596371351359548";
         var welcomeCh = message.guild.channels.cache.get("914597072773206046");
-        var fromArray = ["空から降ってきました。", "迷い込んだようだ。", "拾われたようだ。", "参加しました。", "転がってきました。", "漂着しました", "観光に来ました。", "転生してきたようだ"];
+        var fromArray = ["空から降ってきました。", "迷い込んだようだ。", "拾われたようだ。", "参加しました。", "転がってきました。", "漂着しました。", "観光に来ました。", "転生してきたようだ。", "遊びに来たようだ。", "出現した。", "飛び込んできました。"];
         var from = fromArray[Math.floor(Math.random() * fromArray.length)];
         message.member.roles.add(`${roleId}`);
         message.reply({
