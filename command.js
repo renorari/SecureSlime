@@ -15,6 +15,7 @@ client.on('message', async message => {
     if (!message.content.startsWith(prefix)) return;
     const [cmd, ...args] = message.content.slice(prefix.length).split(" ");
     if (cmd == 'hello') {
+        if (!message.channels.id == "914596250794471434") return;
         var roleId = "914596371351359548";
         var welcomeCh = message.guild.channels.cache.get("914597072773206046");
         var fromArray = ["空から降ってきました。", "迷い込んだようだ。", "拾われたようだ。", "参加しました。", "転がってきました。", "漂着しました。", "観光に来ました。", "転生してきたようだ。", "遊びに来たようだ。", "出現した。", "飛び込んできました。"];
@@ -26,6 +27,7 @@ client.on('message', async message => {
                 color: "RANDOM"
             }
         });
+        console.log(`${message.author.username}がサーバーに参加しました`);
         welcomeCh.send(`@here <@${message.author.id}>さんが${from}`);
     } else {
         message.reply("すみません。\nそのコマンドは存在しないようです😭");
