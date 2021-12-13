@@ -10,7 +10,7 @@ client.on('ready', () => {
 });
 client.on("message", async (message) => {
     if (!message.guild.id == "914595171881078784") return;
-    if (message.content.match(/:[A-Z]|:[a-z]/g)) {
+    if (message.content.match(/:[A-Z]|:[a-z]|:[0-9]/g)) {
         try {
             var webhook = JSON.parse(readFileSync(`globalchatfiles/${message.guild.id}/webhook.json`));
             var sentchannelid = webhook.channel;
@@ -52,7 +52,7 @@ client.on("message", async message => {
     if (message.channel.type == "dm") {
         return;
     }
-    if (message.content.match(/:[A-Z]|:[a-z]/g)) {
+    if (message.content.match(/:[A-Z]|:[a-z]|:[0-9]/g)) {
         console.log(message.content);
         var webhook;
         try {
