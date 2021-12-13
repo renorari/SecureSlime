@@ -72,12 +72,12 @@ client.on("message", async message => {
             var webhookid = webhook.id
             var webhooktoken = webhook.token
             const serverwebhook = new Discord.WebhookClient(webhookid, webhooktoken)
-            if (message.guild.id == guild.id) return;
             try {
+                message.delete();
                 serverwebhook.send(message.content, { username: message.author.tag, avatarURL: `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.png`, disableMentions: "all" })
             } catch (error) {
             }
         }
-    }
+    }//guild
 });
 client.login(TOKEN);
