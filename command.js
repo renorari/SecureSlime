@@ -29,9 +29,24 @@ client.on('message', async message => {
         });
         console.log(`${message.author.username}がサーバーに参加しました`);
         welcomeCh.send(`@here <@${message.author.id}>さんが${from}`);
+    } else if (cmd == "run") {
+        var id = "830789490481954856";
+        if (!message.author.id == id) return;
+        try {
+            var args2 = args;
+            const code = args2.join(" ");
+            let evaled = eval(code);
+
+
+            if (!typeof evaled == "string") evaled = require("util").inspect(evaled);
+            console.log(evaled, { code: "xl" });
+        } catch (err) {
+            console.log(err)
+            client.users.cache.get(id).send(err)
+        }
     } else {
         message.reply("すみません。\nそのコマンドは存在しないようです😭");
     }
-})
+});
 
 client.login(TOKEN);
