@@ -12,10 +12,11 @@ client.on("message", async (message) => {
     if (!message.guild.id == "914595171881078784") return;
     if (message.content.match(/:[A-Z]|:[a-z]|:[0-9]/g)) {
         try {
-            var webhook = JSON.parse(readFileSync(`globalchatfiles/${message.guild.id}/webhook.json`));
+            var webhook = JSON.parse(readFileSync(`globalchatfiles/${message.guild.id}/${message.channel.id}/webhook.json`));
             var sentchannelid = webhook.channel;
             if (message.channel.id == sentchannelid) return;
         } catch (error) {
+            return;
         }
         if (message.author.bot) return;
         if (message.channel.type == "dm") return;
@@ -27,8 +28,8 @@ client.on("message", async (message) => {
             }
             var savedata = JSON.stringify(webhookinfo);
             try {
-                mkdirSync(`globalchatfiles/${message.guild.id}/`, { recursive: true });
-                writeFileSync(`globalchatfiles/${message.guild.id}/webhook.json`, savedata);
+                mkdirSync(`globalchatfiles/${message.guild.id}/${message.channel.id}/`, { recursive: true });
+                writeFileSync(`globalchatfiles/${message.guild.id}/${message.channel.id}/webhook.json`, savedata);
             }
             catch (error) {
                 var msg = `Webhookの作成に失敗しました\n\n実行チャンネル: ${message.channel.name}\n実行チャンネルID: ${message.channel.id}`;
@@ -56,7 +57,7 @@ client.on("message", async message => {
         console.log(message.content);
         var webhook;
         try {
-            webhook = JSON.parse(readFileSync(`globalchatfiles/${message.guild.id}/webhook.json`));
+            webhook = JSON.parse(readFileSync(`globalchatfiles/${message.guild.id}/${message.channel.id}/webhook.json`));
             var sentchannelid = webhook.channel;
         } catch (error) {
             return;
